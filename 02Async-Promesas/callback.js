@@ -24,4 +24,4 @@ function sumaDosFunciones (functionOne, functionTwo, functionThree){
 } 
 
 // Invocamos a sumaDosFunciones y le pasamos como parametro 2 funciones 
-console.log(sumaDosFunciones(soyCien, soyDoscientos, soyTrescientos))
+console.log(sumaDosFunciones(soyCien, soyDoscientos, soyTrescientos) )
