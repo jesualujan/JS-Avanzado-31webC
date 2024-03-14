@@ -104,6 +104,7 @@ const color = {
 	normal: '#FFFFFF'
 }
 
+// La función Object.keys() en JavaScript se utiliza para devolver un array de las propiedades enumerables de un objeto.
 const main_types = Object.keys(color)
 
 function createPokemon (pokemon, modal) {
@@ -114,7 +115,7 @@ function createPokemon (pokemon, modal) {
     // ya que indexOf() es más rápido y adecuado para subcadenas simples, 
     //mientras que search() permite usar expresiones regulares para patrones más complejos
     const poke_types = pokemon.types.map( type => type.type.name )
-    const type = main_types.find(type => poke_types.indexOf(type))
+    const type = main_types.find(type => poke_types.indexOf(type) > -1);
     const name = pokemon.name[0].toUpperCase() + pokemon.name.slice(1)
     const color = colors[type]
     pokemonEL.style.backgroundColor = color
