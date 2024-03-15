@@ -119,5 +119,48 @@ function createPokemon (pokemon, modal) {
     const name = pokemon.name[0].toUpperCase() + pokemon.name.slice(1)
     const color = colors[type]
     pokemonEL.style.backgroundColor = color
-    
+
+    if(modal !== true) {
+        // ` `  <- template string ( html + javascript ) acceder a mis variables 
+
+    // toString(): Convierte el ID a una cadena de texto.
+    // padStart(3, '0'): Asegura que la cadena tenga al menos 3 caracteres, 
+    // rellenando con ceros a la izquierda si es necesario. Por ejemplo, si el ID es "7",
+    // se convierte en "0007". 
+        const pokeInnerHTML = `
+            <div class="imge-container">
+            <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.id}.png" alt="${name}">
+            </div>
+
+            <div class="info">
+                <span class="number">#${pokemon.id.toString().padStart(3,'0')} </span>
+                <h3 class="name">${name}</h3>
+                <small class="type">Tipo: <span>${type}</span></small>
+                  </div>
+        `
+        pokemonEL.innerHTML = pokeInnerHTML
+        pokeContent.appendChild(pokemonEL)
+    }
+    else {
+        const pokeInnerHTML = `
+        <div id="modalPokemon" class="modal">
+            <div class="pokemon">
+
+                <div class="imge-container">
+                <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.id}.png" alt="${name}">
+                </div>
+
+                <div class="info">
+                    <span class="number">#${pokemon.id.toString().padStart(3,'0')} </span>
+                    <h3 class="name">${name}</h3>
+                    <small class="type">Tipo: <span>${type}</span></small>
+                /div>
+
+            </div>
+        </div> 
+    `
+    modalSearch.innerHTML = pokeInnerHTML
+    }
 }
+
+drawPokemon()
