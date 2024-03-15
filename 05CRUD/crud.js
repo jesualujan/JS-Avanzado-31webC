@@ -85,6 +85,24 @@ const handleEditJedi = () => {
 
     // utilizar formulario en una modal de bootstrap
     const newName = prompt("INGRESA EL NUEVO NOMBRE: " , jedi.name)
-
     const newAge = prompt("INGRESA LA NUEVA EDAD: " , jedi.age)
+    const newTeam = prompt("INGRESA EL NUEVO EQUIPO: " , jedi.team)
+
+    if( newName && newAge && newTeam){
+        // si se proporcionan nuevos valores válidos, se actuliza el jedi en el arreglo de jedis
+        arregloJedis[index] = {
+            ...jedi,
+            name: newName,
+            age: Number(newAge),
+            team: newTeam
+        }
+        updateJediList()
+    }
+}
+
+const handleDeleteJedi = () => {
+
+    arregloJedis.splice(index, 1)
+    updateJediList()
+    console.log(arregloJedis)
 }
