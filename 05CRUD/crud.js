@@ -1,0 +1,1 @@
+import arregloJedis from './data/schema.js';
