@@ -53,6 +53,7 @@ const handleFormSubmit = (event) => {
         // si lo queremos ver por consola
         console.log(arregloJedis)
         console.dir(arregloJedis)
+        console.table(arregloJedis)
     }else {
         // si hay datos vacios, se muestra un alerta y se detiene la ejecución del evento
         alert("TIENES UN DATO VACIO, POR FAVOR VERIFICAR EL FORMULARIO")
