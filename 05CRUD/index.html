@@ -11,60 +11,58 @@
     
     <main class="container">
         <!-- START FORM -->
-        <form id="characterRegistry">
+        <form  id="characterRegistry">
             <div class="my-3">
-                <label class="form-label" for="characterNameControl">Nombre</label>
-                <input id="characterNameControl" class="form-control" name="name" type="text" placeholder="Nombre del personaje">
-              </div>
-              <div class="my-3">
-                <label class="form-label" for="characterAgeControl">Edad</label>
-                <input id="characterAgeControl" class="form-control" name="age" type="number" placeholder="Edad del personaje">
-              </div>
-              <div class="my-3">
-                <label class="form-label" for="characterTeamControl">Facción</label>
-                <input id="characterTeamControl" class="form-control" name="team" type="text" placeholder="Facción del personaje">
-              </div>
-              <button type="submit" type="button" class="btn btn-outline-success" form="characterRegistry">Registrar</button>
+                <label for="characterNameControl" class="form-label">Nombre</label>
+                <input name="name" type="text" class="form-control" id="characterNameControl" placeholder="Nombre del personaje">
+            </div>
+            <div class="my-3">
+                <label for="characterAgeControl" class="form-label">Edad</label>
+                <input name="age" type="number" class="form-control" id="characterAgeControl" placeholder="Edad del personaje">
+            </div>
+            <div class="my-3">
+                <label for="characterTeamControl" class="form-label">Facción</label>
+                <input name="team" type="text" class="form-control" id="characterTeamControl" placeholder="Facción del personaje">
+            </div>
+            <button type="submit" class="btn btn-outline-success" form="characterRegistry">Registrar</button>
         </form>
         <!-- END´S FORM -->
 
         <!--  START  SECTION ONE  -->
-            <section class="row">
-                <div class="col-6 text-center">
-                    <button id="orderButton" type="button" class="btn btn-outline-primary">Ordenar</button>
-                </div>
-
-                <div class="col-6 text-center">
-                    <label class="form-label" for="jediNameFilter">Buscar por nombre</label>
-                    <input id="jediNameFilter" class="form-control" name="jediFilter" type="text" placeholder="Nombre">
-                </div>
-            </section>
+        <section class="row">
+            <div class="col-6 text-center">
+                <button id="orderButton" type="button" class="btn btn-outline-primary">Ordenar</button>
+            </div>
+            <div class="col-6 text-center">
+                <label for="jediNameFilter" class="form-label">Buscar por nombre</label>
+                <input name="jediFilter" type="text" class="form-control" id="jediNameFilter" placeholder="Nombre">
+            </div>
+        </section>
         <!-- END´S SECTION ONE  -->
 
          <!--  START  SECTION TWO  -->
          <section class="container mt-3">
-            <h1> JEDIS REGISTRADOS </h1>
-            <!-- AGREGAMOS UN BOTON PARA CAMBIAR EL ROL -->
-            <button id="changeRoleBtn" type="button" class="btn btn-outline-dark">Cambiar rol</button>
-            <table class="table table-striped">
-                <thead>
-                    <tr>
-                        <th>Nombre</th>
-                        <th>Edad</th>
-                        <th>Equipo</th>
-                        <th>Facción</th>
-                        <th>Acciones</th>
-                      </tr>
-                </thead>
-                <tbody id="jediList">
-                </tbody>
-              </table>
-         </section>
+            <h1>JEDIS REGISTRADOS</h1>
+         <button type="button" class="btn btn-outline-secondary" id="changeRoleBtn">Cambiar Rol</button>
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Edad</th>
+                            <th>Equipo</th>
+                            <th>Rol</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="jediList"></tbody>
+                    </tbody>
+                </table>
+            </section>
      <!-- END´S SECTION TWO  -->
     </main>
     <!-- SCRIPTS DE BOOTSTRAP -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <!-- VINCULAMOS NUESTRO crud.js-->
-    <script type="module" src="crud.js" defer></script>
+    <script type="module" src="./crud.js" defer></script>
 </body>
 </html>
